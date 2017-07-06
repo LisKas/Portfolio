@@ -5,3 +5,17 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $(".btn").click(function(){
+        $(".text").fadeToggle("slow");
+                    
+        $(this).toggleClass("active")
+          
+    });
+           
+ 
+
+});
+
+
+  

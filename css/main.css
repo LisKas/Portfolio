@@ -15,26 +15,29 @@
   font-style: normal; 
 }
 
-
+ul{
+  margin: 0;
+}
 body{
 	margin: 0;
 	padding: 0;
 	font-family: Century Gothic, sans-serif;
-	 background-image: url('../img/bg-min.png');
+	overflow: hidden;
+  background-image: url('../img/bg-min.png');
   background-size: cover; 
-  background-repeat: no-repeat;  height: 100vh; overflow: hidden;
+  background-repeat: no-repeat;  
 }
-.container{
+.container{ 
   max-width: 1000px;
-
-	margin: 0 auto;
+  margin: 0 auto;
 	padding-right: 15px;
 	padding-left: 15px;
+  
 }
 
 .layer img{
   position: relative;
-  width: 100%;
+  /*width: 100%;*/
 	top: -250px;
   animation-name: layer;
   animation-duration:20s;
@@ -54,27 +57,22 @@ to{
 }
 }
 .cloud img{
-   position: relative;
   width: 100%;
+  position: relative;
   top: -350px;
   left: 200px;
 }
 /*//////////////////////////////////////////////////////////////*/
-.about{
-  text-align: center;
-}
+
 h1 {
-	margin-top: 90px;
-  margin-bottom: 50px;
+	margin: 90px 0 50px;
 	position: relative;
-	/*z-index: 1;*/
 	color: #fff;
-    font-size: 105px;
+  font-size: 105px;
 	-webkit-animation-name: zoomIn;
 	        animation-name: zoomIn;
-    -webkit-animation-duration: 3s;
+  -webkit-animation-duration: 3s;
             animation-duration: 3s;
-    
 }
 
 @keyframes zoomIn {
@@ -94,7 +92,6 @@ h1 {
 .list-site{
 	position: relative;
 	z-index: 1;
-	margin: 0;
   margin-left: 150px;
 	padding: 0;
 }
@@ -146,6 +143,7 @@ h1 {
   top: 60px;
   left: 10px;
   text-align: center;
+
 }
 .nav li{
   display: block;
@@ -162,6 +160,7 @@ h1 {
 	color: #fff;
 	animation:none;
 }
+
 .nav li:hover {	
 	animation-name:tada;
 	animation-duration: 2s;
@@ -188,15 +187,11 @@ h1 {
   }
 }
 
-/*.list-site li:hover .nav {
-	display: block;
-    
-}*/
 /*//////////////////////////////////////////////////////////////////////*/
 
 .boat{
 	position: relative;
-	top:-380px;
+	top:-375px;
 	left: 520px;
 
 }
@@ -244,9 +239,9 @@ h1 {
 .boat-md{
 	position: absolute;
 	left: 245px;
-	top: 18px;
+	top: 25px;
   animation-name: wave-2;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
    
@@ -262,15 +257,15 @@ h1 {
 
 .boat-sm{
 	position: absolute;
-	left: 400px;
-	top: 40px;
-   animation-name: wave-2;
-  animation-duration: 5s;
+	left: 450px;
+	top: 50px;
+   animation-name: wave-3;
+  animation-duration: 2s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
    
 }
-@keyframes wave-2{
+@keyframes wave-3{
   from, to{
     transform: rotate3d(0, 0, 1, -2deg);
   }
@@ -279,7 +274,38 @@ h1 {
   }
 }
 
+/*/////////////////////////////////////////////////////////////////*/
+.icon{
+ display: inline;
+ padding-top: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  /*padding: 10px;*/
+  position: relative; 
+}
 
+.btn { 
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  background: url('../img/designer-cup.svg') rgba(255, 255, 255, .5) no-repeat 3px 3px;
+   width: 30px;
+  height: 30px;
+  border-radius: 30%;
+  top: 9px;
+  left: 10px;
+}
+.active{
+  background-color:#fff;
+}
+.text {
+  display: none;
+  color:rgba(255, 255, 255, .7);
+  background-color: 
+  border-radius: 0 10px 10px 0;
+  padding: 5px 10px;
+  
+}
 /*//////////////////////////////////////////*/
 /*-----------HELP CLASSES---------*/
 
