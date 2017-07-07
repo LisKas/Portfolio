@@ -106,7 +106,7 @@ h1 {
 	animation-name: bounceInUp;
 	animation-duration:3s;
 	position: relative;
-  cursor: pointer;
+  cursor:inherit;
 }
 .list-site li:hover .nav{
   display: block;
