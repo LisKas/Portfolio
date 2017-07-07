@@ -106,12 +106,12 @@ h1 {
 	animation-name: bounceInUp;
 	animation-duration:3s;
 	position: relative;
-  cursor:inherit;
+  cursor: context-menu;
 }
 .list-site li:hover .nav{
   display: block;
  animation-name: opacity;
- animation-duration: 2s;
+ animation-duration: .8s;
 }
 @keyframes opacity {
   from {
