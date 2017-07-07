@@ -17,14 +17,14 @@
 
 ul{
   margin: 0;
+  padding: 0;
 }
 body{
-	margin: 0;
-	padding: 0;
+	
 	font-family: Century Gothic, sans-serif;
-	overflow: hidden;
+	overflow-x: hidden;
   background-image: url('../img/bg-min.png');
-  background-size: cover; 
+  background-size: 100%; 
   background-repeat: no-repeat;  
 }
 .container{ 
@@ -34,41 +34,41 @@ body{
 	padding-left: 15px;
   
 }
-
+#scene{
+  top:-200px;
+}
 .layer img{
+  width: 100%;
   position: relative;
-  /*width: 100%;*/
-	top: -250px;
+
+}
+.cloud img {
+  width: 80%;
+  left: 400px;
+  position: relative;
   animation-name: layer;
   animation-duration:20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
- 
 }
 @keyframes layer{
 from{
-  transform: translate3d(-100px, -20px, 5px);
+  transform: translateX(-20px);
 }
 50%{
-  transform: translate3d(0, 0px, 0);
+   transform: translateX(20px);
 }
 to{
-  transform: translate3d(-100px, -20px, 0);
+   transform: translateX(-20px);
 }
-}
-.cloud img{
-  width: 100%;
-  position: relative;
-  top: -350px;
-  left: 200px;
 }
 /*//////////////////////////////////////////////////////////////*/
 
 h1 {
-	margin: 90px 0 50px;
+	margin: 60px 0 50px;
 	position: relative;
 	color: #fff;
-  font-size: 105px;
+  font-size: 80px;
 	-webkit-animation-name: zoomIn;
 	        animation-name: zoomIn;
   -webkit-animation-duration: 3s;
@@ -92,14 +92,14 @@ h1 {
 .list-site{
 	position: relative;
 	z-index: 1;
-  margin-left: 150px;
+  margin-left: 60px;
 	padding: 0;
 }
 .list-site li {
 	display: inline-block;
-	padding: 15px 50px;
+	padding: 10px 50px;
 	color: #40b49a;
-	font-size: 24px;
+	font-size: 20px;
 	background-color: rgba(255, 255, 255, .95);
 	border-radius: 30px;
 	margin-right: 20px;
@@ -140,8 +140,8 @@ h1 {
 .nav {
 	display: none;
   position: absolute;
-  top: 60px;
-  left: 10px;
+  padding: 0;
+  top: 50px;
   text-align: center;
 
 }
@@ -149,8 +149,8 @@ h1 {
   display: block;
   animation:none;
   background-color: transparent;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 12px;
   padding: 0;
   padding-top: 15px;
    
@@ -191,11 +191,14 @@ h1 {
 
 .boat{
 	position: relative;
-	top:-375px;
-	left: 520px;
+	top:-230px;
+	left: 260px;
+  z-index: -1;
 
 }
-
+.boat-lg {
+  position: relative;
+}
 .boat-lg img{
   position: absolute;
   animation-name: wave-1;
@@ -203,6 +206,13 @@ h1 {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
    
+}
+.boat-lg::before{
+ position: absolute;
+  content: ' ';
+  width: 135px;
+  top: 155px;
+  box-shadow: 10px 10px 20px 4px #3b3ba0;
 }
 @keyframes wave-1{
   from{
@@ -235,8 +245,18 @@ h1 {
      transform: rotate3d(0, 0, 1, 3deg);
   }
 }
-
 .boat-md{
+  position: relative;
+}
+.boat-md::before{
+ position: absolute;
+  content: ' ';
+  width: 100px;
+  top: 139px;
+  left: 240px;
+  box-shadow: 0 8px 20px 4px #565690;
+}
+.boat-md img{
 	position: absolute;
 	left: 245px;
 	top: 25px;
@@ -254,8 +274,18 @@ h1 {
     transform:  rotate3d(0, 0, 1, 5deg);
   }
 }
-
 .boat-sm{
+  position: relative;
+}
+.boat-sm::before{
+  position: absolute;
+  content: ' ';
+  width: 50px;
+  top: 114px;
+  box-shadow: 0 8px 25px 4px #3c3cbd;
+  left: 455px;
+}
+.boat-sm img{
 	position: absolute;
 	left: 450px;
 	top: 50px;
@@ -275,39 +305,38 @@ h1 {
 }
 
 /*/////////////////////////////////////////////////////////////////*/
-.icon{
- display: inline;
- padding-top: 20px;
-  margin-left: 20px;
+
+.contact {
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url('../img/svg/designer-cup.svg') rgba(255, 255, 255, .5) 3px 3px no-repeat;
+  border-radius: 30%;
+  margin-right: 30px;
   cursor: pointer;
-  /*padding: 10px;*/
-  position: relative; 
 }
 
-.btn { 
-  position: relative;
-  display: inline-block;
-  color: #fff;
-  background: url('../img/designer-cup.svg') rgba(255, 255, 255, .5) no-repeat 3px 3px;
-   width: 30px;
-  height: 30px;
-  border-radius: 30%;
-  top: 9px;
-  left: 10px;
+.active {
+  background-color: #fff;
+  transform: translateX(-160px);
+  transition: .5s;
 }
-.active{
-  background-color:#fff;
-}
+
 .text {
+  position: relative;
+  font-size: 14px;
+  top: 5px;
+  left: 35px;
   display: none;
   color:rgba(255, 255, 255, .7);
-  background-color: 
-  border-radius: 0 10px 10px 0;
-  padding: 5px 10px;
-  
 }
-/*//////////////////////////////////////////*/
-/*-----------HELP CLASSES---------*/
+
+
+
+
+/*//////////////////////////////////////////////////////////////////////////////*/
+
+/*--------hellp classes--------*/
 
 .clearfix:before,
 .clearfix:after {

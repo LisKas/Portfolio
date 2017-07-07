@@ -1,21 +1,15 @@
 $(document).ready(function(){
+
     $(".list-site li").click(function(){
         $(this).children(".nav").slideToggle("slow");
-                    return false;
+         return false;
+                   
     });
-});
 
-$(document).ready(function(){
-    $(".btn").click(function(){
-        $(".text").fadeToggle("slow");
+    $(".contact").click(function(){
+       $(this).children(".text").fadeToggle("slow");
                     
-        $(this).toggleClass("active")
+        $(this).toggleClass("active");
           
     });
-           
- 
-
 });
-
-
-  
