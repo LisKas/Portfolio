@@ -20,30 +20,30 @@ ul{
   padding: 0;
 }
 body{
+	font-family: Century Gothic, Arial ,sans-serif;
 	
-	font-family: Century Gothic, sans-serif;
-	overflow: hidden;
-  background-image: url('../img/bg-min.png');
-  background-size: 100%; 
-  background-repeat: no-repeat;  
 }
+
 .container{ 
-  max-width: 1000px;
-  margin: 0 auto;
-	padding-right: 15px;
+  max-width: 100%;
+  max-height: 100%;
+  padding-right: 15px;
 	padding-left: 15px;
-  
+  overflow: hidden;
+  background-image: url('../img/bg-min.png');
+  background-size: cover; 
+  background-repeat: no-repeat;  
 }
 #scene{
   top:-200px;
 }
+
 .layer img{
   width: 100%;
-  position: relative;
 
 }
 .cloud img {
-  width: 80%;
+  width: 65%;
   left: 400px;
   position: relative;
   animation-name: layer;
@@ -63,12 +63,14 @@ to{
 }
 }
 /*//////////////////////////////////////////////////////////////*/
-
+.about{
+  margin-left: 230px;
+}
 h1 {
-	margin: 60px 0 50px;
-	position: relative;
+	margin: 90px 0 50px;
+  font-weight: 900;
 	color: #fff;
-  font-size: 80px;
+  font-size: 105px;
 	-webkit-animation-name: zoomIn;
 	        animation-name: zoomIn;
   -webkit-animation-duration: 3s;
@@ -92,21 +94,24 @@ h1 {
 .list-site{
 	position: relative;
 	z-index: 1;
-  margin-left: 60px;
+  margin-left: 150px;
 	padding: 0;
+
 }
 .list-site li {
 	display: inline-block;
-	padding: 10px 50px;
+  text-align: center;
+  width: 240px;       /*фиксированная ширина задана дизайнером*/
+	padding: 10px 0;
 	color: #40b49a;
-	font-size: 20px;
+	font-size: 24px;
 	background-color: rgba(255, 255, 255, .95);
 	border-radius: 30px;
-	margin-right: 20px;
+	margin-right: 45px;
 	animation-name: bounceInUp;
 	animation-duration:3s;
 	position: relative;
-  cursor: context-menu;
+  cursor: pointer;
 }
 .list-site li:hover .nav{
   display: block;
@@ -160,7 +165,7 @@ h1 {
 
 
 .nav {
-	display: none;
+  display: none;
   position: absolute;
   padding: 0;
   text-align: center;
@@ -170,10 +175,13 @@ h1 {
   display: block;
   animation:none;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0;
   padding-top: 20px;
    
+}
+.nav li:first-child{
+  margin-top: 15px;
 }
 .nav a { 
 	text-decoration: none;
@@ -182,58 +190,43 @@ h1 {
 }
 
 .nav li:hover {	
-	animation-name:tada;
-	animation-duration: 2s;
+  animation-name:pulse;
+	animation-duration: 1s;
 }
-@keyframes tada {
+@keyframes pulse {
   from {
     transform: scale3d(1, 1, 1);
   }
 
-  10%, 20% {
-    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-  }
-
-  30%, 50%, 70%, 90% {
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-  }
-
-  40%, 60%, 80% {
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
   }
 
   to {
     transform: scale3d(1, 1, 1);
   }
 }
-
+.nav li:hover a{
+  border-bottom: 1px solid #fff;
+}
 /*//////////////////////////////////////////////////////////////////////*/
 
 .boat{
 	position: relative;
-	top:-230px;
-	left: 260px;
-  z-index: -1;
+  bottom: 260px;
+  left: 32%;
+  min-height: 165px;
+}
 
-}
 .boat-lg {
-  position: relative;
-}
-.boat-lg img{
   position: absolute;
+  display: inline-block;
   animation-name: wave-1;
   animation-duration: 15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-   
 }
-.boat-lg::before{
- position: absolute;
-  content: ' ';
-  width: 135px;
-  top: 155px;
-  box-shadow: 10px 10px 20px 4px #3b3ba0;
-}
+
 @keyframes wave-1{
   from{
     transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 3deg);
@@ -266,26 +259,16 @@ h1 {
   }
 }
 .boat-md{
-  position: relative;
-}
-.boat-md::before{
- position: absolute;
-  content: ' ';
-  width: 100px;
-  top: 139px;
-  left: 240px;
-  box-shadow: 0 8px 20px 4px #565690;
-}
-.boat-md img{
-	position: absolute;
-	left: 245px;
-	top: 25px;
+  position: absolute;
+  left: 22%;
+  top:15%;
+  display: inline-block;
   animation-name: wave-2;
   animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-   
 }
+
 @keyframes wave-2{
   from, to{
     transform: rotate3d(0, 0, 1, -5deg);
@@ -294,27 +277,17 @@ h1 {
     transform:  rotate3d(0, 0, 1, 5deg);
   }
 }
-.boat-sm{
-  position: relative;
-}
-.boat-sm::before{
+.boat-sm {
   position: absolute;
-  content: ' ';
-  width: 50px;
-  top: 114px;
-  box-shadow: 0 8px 25px 4px #3c3cbd;
-  left: 455px;
-}
-.boat-sm img{
-	position: absolute;
-	left: 450px;
-	top: 50px;
-   animation-name: wave-3;
+  left:40%;
+  top:25%;
+  animation-name: wave-3;
   animation-duration: 2s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
    
 }
+
 @keyframes wave-3{
   from, to{
     transform: rotate3d(0, 0, 1, -2deg);
@@ -324,16 +297,19 @@ h1 {
   }
 }
 
+
 /*/////////////////////////////////////////////////////////////////*/
 
 .contact {
-  float: right;
+  position: relative;
   width: 30px;
   height: 30px;
   background: url('../img/svg/designer-cup.svg') rgba(255, 255, 255, .5) 3px 3px no-repeat;
   border-radius: 30%;
   margin-right: 30px;
   cursor: pointer;
+  bottom: -100%;
+  left: 92%;
 }
 
 .active {
@@ -351,19 +327,204 @@ h1 {
   color:rgba(255, 255, 255, .7);
 }
 
-
-
-
 /*//////////////////////////////////////////////////////////////////////////////*/
 
-/*--------hellp classes--------*/
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; 
-    display: table; 
+/*----------------Media queries------------*/
+@media only screen and (max-width: 1550px)   {
+  .boat {
+    bottom:250px;
+  }
+}
+@media only screen and (max-width: 1370px)   {
+  .about{
+    margin-left: 150px;
+  }
+  h1{
+    font-size: 90px;
+    margin-top: 70px;
+  }
+  .list-site{
+    margin-left: 75px;
+  }
+  .boat {
+    bottom:200px;
+  }
+   .boat-sm{
+    top:34%;
+    left: 45%;
+  }
 }
 
-.clearfix:after {
-    clear: both;
+@media only screen and (max-width: 1280px)   {
+     h1{
+    font-size: 80px;
+  
+  }
+  .boat {
+      bottom:160px;
+      left: 38%;
+  }
+   .boat-sm{
+    top:25%;
+    left: 40%;
+  }
+    .boat img{
+    transform: scale(.8);
+
+    }
 }
+@media only screen and (max-width: 1140px)   {
+ 
+  .list-site li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+    
+    .boat img{
+    transform: scale(.7);
+
+    } 
+    .boat {
+      bottom:140px;
+      left: 43%;
+  }
+ 
+}
+
+@media only screen and (max-width: 960px)   {
+     #scene{
+    top:-150px;
+  }
+  h1{
+    font-size: 70px;
+  }
+  .list-site li {
+    font-size: 18px;
+    width: 200px;
+  }
+  .boat {
+    bottom: 120px;
+    left: 50%;
+  } 
+  .boat-sm{
+    top:25%;
+  }
+  .boat img{
+    transform: scale(.5);
+
+    }
+}
+@media only screen and (max-width: 880px)   {
+ 
+  .about{
+    margin-left: 100px;
+  }
+    h1{
+    font-size: 60px;
+  }
+  .list-site{
+    margin-left: 30px;
+  }
+  .list-site li {
+    font-size: 16px;
+  } 
+  .nav li{
+    font-size: 16px;
+}
+  .boat {
+    bottom: 100px;
+    left: 50%;
+  }
+   .boat-sm{
+    left: 40%;
+    top: 20%;
+  }
+}
+@media only screen and (max-width: 770px)   {
+  .about{
+
+    text-align: center;
+    margin-left: 0;
+  }
+    h1{
+    font-size: 50px;
+  
+  }
+  .list-site li {
+    font-size: 16px;
+    width: 170px;
+  }
+  #scene{
+    top:-80px;
+  }
+  .cloud img {
+  top: -80px;
+  left: 250px;
+
+  }
+  .boat {
+    bottom: 85px;
+    left: 50%;
+  }
+ 
+}
+@media only screen and (max-width: 680px)   {
+  #scene{
+    top:-80px;
+  }
+  .cloud img {
+  top: -80px;
+  left: 250px;
+
+  }
+  .boat-lg{
+    left: 20%;
+  }
+ .boat-sm, .boat-md{
+  display: none;
+ }
+}
+
+@media only screen and (max-width: 520px)   {
+  #scene{
+    top:0px;
+  }
+  .cloud img {
+  left: 150px;
+
+  }
+
+  .list-site li {
+    font-size: 16px;
+    margin-right: 15px;
+  } 
+  .nav li{
+  padding-top: 20px;
+   
+}
+}
+@media only screen and (max-width: 440px)   {
+
+  #scene{
+    top:-100px;
+  }
+  .cloud img{
+    top:-170px;
+  }
+ 
+  .boat-lg{
+    display: none;
+  }
+  .list-site li {
+    width: 130px;
+    padding: 10px 2px;
+    margin-bottom: 15px;
+  } 
+  .nav li{
+ 
+  font-size: 16px;
+  padding-top: 10px;
+   
+}
+}
+/*//////////////////////////////////////////////////////////////////////////////*/
