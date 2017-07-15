@@ -1,16 +1,14 @@
 @font-face { 
   font-family: 'Century Gothic'; 
-  src: url('../font/8483_0.woff') format('woff'),
+  src: url('../font/8483_0.woff') format('woff');
   src: url('../font/8483_0.ttf') format('truetype'); 
-
-  
   font-weight: bold; 
   font-style: normal; 
 }
 @font-face { 
   font-family: 'Century Gothic'; 
-  src: url('../font/GOTHIC_0.woff') format('woff'),
-  src: url('../font/8483_0.ttf') format('truetype');
+  src: url('../font/GOTHIC_0.woff') format('woff');
+  src: url('../font/GOTHIC_0.TTF.ttf') format('truetype');
   font-weight: regular; 
   font-style: normal; 
 }
